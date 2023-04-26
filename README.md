@@ -35,15 +35,16 @@ https://furima-39335.onrender.com
 ER図はer.dioに記載
 
 ## usersテーブル
-| Column                | Type   | Options                   |
-| --------------------- | ------ | ------------------------- |
-| nickname              | string | null: false               |
-| email                 | string | null: false, unique: true |
-| encrypted_password    | string | null: false               | 
-| last_name_kanji       | string | null: false               |
-| first_name_kanji      | string | null: false               |
-| last_name_kana        | string | null: false               |  
-| first_name_kana       | string | null: false               |
+| Column                | Type    | Options                   |
+| --------------------- | ------  | ------------------------- |
+| nickname              | string  | null: false               |
+| email                 | string  | null: false, unique: true |
+| encrypted_password    | string  | null: false               | 
+| last_name_kanji       | string  | null: false               |
+| first_name_kanji      | string  | null: false               |
+| last_name_kana        | string  | null: false               |  
+| first_name_kana       | string  | null: false               |
+
   
 
 ## itemsテーブル
@@ -52,7 +53,7 @@ ER図はer.dioに記載
 | item_name          | string  | null: false                    |
 | category_id        | integer | null: false                    |
 | price              | integer | null: false                    |
-| user_id            | bigint  | null: false, foreign_key: true |
+| user_id            | integer | null: false, foreign_key: true |
 | item_condition     | string  | null: false                    |
 | shipping_fee_bearer| string  | null: false                    |
 | shipping_origin    | string  | null: false                    |
@@ -73,13 +74,13 @@ ER図はer.dioに記載
 ## shipping_addressesテーブル
 | Column            | Type      | Options                        |
 | ----------------- | --------- | ------------------------------ |
+| purchase_history  | references| null: false, foreign_key: true |
 | postal_code       | string    | null: false                    |
 | prefecture_id     | integer   | null: false                    |
 | city              | string    | null: false                    |
 | street_address    | string    | null: false                    |
 | building_name     | string    |                                |
 | phone_number      | string    | null: false                    |
-| purchase_history  | references| null: false, foreign_key: true |
 
 ## Association
 
@@ -88,18 +89,22 @@ ER図はer.dioに記載
 - has_many :favorites
 - has_many :items, through: :favorites
 - has_many :purchase_histories
+
 ## Itemsテーブル
 - belongs_to :user
 - has_many :favorites
-- has_many :users, through: :favorites
+- has_many :users, through: :favorites, source: :user
 - has_one :purchase_history
+
 ## Favoritesテーブル
 - belongs_to :user
 - belongs_to :item
+
 ## PurchaseHistoriesテーブル
 - belongs_to :user
 - belongs_to :item
 - has_one :shipping_address
+
 ## ShippingAddressesテーブル
 - belongs_to :purchase_history
 
