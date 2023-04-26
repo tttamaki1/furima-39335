@@ -44,9 +44,7 @@ ER図はer.dioに記載
 | first_name_kanji      | string  | null: false               |
 | last_name_kana        | string  | null: false               |  
 | first_name_kana       | string  | null: false               |
-| birth_year            | integer | null: false               |
-| birth_month           | integer | null: false               |
-| birth_day             | integer | null: false               |
+| birth_date            | date    | null: false               |
   
 
 ## itemsテーブル
@@ -56,12 +54,11 @@ ER図はer.dioに記載
 | category_id           | integer | null: false                    |
 | price                 | integer | null: false                    |
 | user                  | references | null: false, foreign_key: true |
-| description           | string  | null: false                    |
+| description           | text    | null: false                    |
 | condition_id          | integer | null: false                    |
 | shipping_fee_bearer_id| integer | null: false                    |
-| shipping_origin_id    | integer | null: false                    |
-| shipping_estimate_id  | integer | null: false                    |
-
+| prefecture_id         | integer | null: false                    |
+| shipping_estimate     | string  | null: false                    |
 
 ## favoritesテーブル
 | Column   | Type       | Options                        |
@@ -145,7 +142,6 @@ ER図はer.dioに記載
 ・商品ID (商品の外部キーカラム)
 
 ## shipping_addressesテーブル
-
 ・購入履歴
 ・郵便番号
 ・都道府県ID (Activehash)
