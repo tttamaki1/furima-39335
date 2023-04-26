@@ -109,10 +109,6 @@ ER図はer.dioに記載
 - belongs_to :purchase_history
 
 
-- usersテーブルは、アプリケーションのユーザー情報を管理します。
-- itemsテーブルは、出品された商品情報を管理します。seller_idは、usersテーブルとの外部キー制約を持ち、出品者のユーザー情報を参照します。
-- purchase_historiesテーブルは、購入履歴を管理します。user_idは購入者のユーザー情報、item_idは購入された商品情報を参照するための外部キー制約です。
-- shipping_addressesテーブルは、配送先住所情報を管理します。purchase_history_idは、購入履歴テーブルとの外部キー制約で、どの購入履歴に紐づく配送先住所かを参照します。
 
 ## 画面遷移図
 (画面遷移図を添付)
