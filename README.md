@@ -44,20 +44,24 @@ ER図はer.dioに記載
 | first_name_kanji      | string  | null: false               |
 | last_name_kana        | string  | null: false               |  
 | first_name_kana       | string  | null: false               |
-
+| birth_year            | integer | null: false               |
+| birth_month           | integer | null: false               |
+| birth_day             | integer | null: false               |
   
 
 ## itemsテーブル
-| Column             | Type    | Options                        |
-| ------------------ | ------- | ------------------------------ |
-| item_name          | string  | null: false                    |
-| category_id        | integer | null: false                    |
-| price              | integer | null: false                    |
-| user_id            | integer | null: false, foreign_key: true |
-| item_condition     | string  | null: false                    |
-| shipping_fee_bearer| string  | null: false                    |
-| shipping_origin    | string  | null: false                    |
-| shipping_estimate  | integer | null: false                    |
+| Column                | Type    | Options                        |
+| --------------------- | ------- | ------------------------------ |
+| item_name             | string  | null: false                    |
+| category_id           | integer | null: false                    |
+| price                 | integer | null: false                    |
+| user                  | references | null: false, foreign_key: true |
+| description           | string  | null: false                    |
+| condition_id          | integer | null: false                    |
+| shipping_fee_bearer_id| integer | null: false                    |
+| shipping_origin_id    | integer | null: false                    |
+| shipping_estimate_id  | integer | null: false                    |
+
 
 ## favoritesテーブル
 | Column   | Type       | Options                        |
@@ -108,6 +112,47 @@ ER図はer.dioに記載
 ## ShippingAddressesテーブル
 - belongs_to :purchase_history
 
+## 各テーブルの説明
+
+## usersテーブル
+・ニックネーム
+・メールアドレス
+・暗号化パスワード
+・姓(漢字)
+・名(漢字)
+・姓(カナ)
+・名(カナ)
+・誕生年
+・誕生月
+・誕生日
+
+## itemsテーブル
+・カテゴリーID (Activehash)
+・価格
+・出品者
+・商品説明
+・商品状態ID (Activehash)
+・配送料負担ID (Activehash)
+・都道府県ID (Activehash)
+・発送までの日数ID (Activehash)
+
+## favoritesテーブル
+・ユーザーID (ユーザーの外部キーカラム)
+・商品ID (商品の外部キーカラム)
+
+## Purchase_historyテーブル
+・ユーザーID (ユーザーの外部キーカラム)
+・商品ID (商品の外部キーカラム)
+
+## shipping_addressesテーブル
+
+・購入履歴
+・郵便番号
+・都道府県ID (Activehash)
+・市区町村
+・番地
+・建物名
+・電話番号
 
 
 ## 画面遷移図
