@@ -58,7 +58,7 @@ ER図はer.dioに記載
 | condition_id          | integer | null: false                    |
 | shipping_fee_bearer_id| integer | null: false                    |
 | prefecture_id         | integer | null: false                    |
-| shipping_estimate     | string  | null: false                    |
+| shipping_estimate_id  | integer | null: false                    |
 
 ## favoritesテーブル
 | Column   | Type       | Options                        |
