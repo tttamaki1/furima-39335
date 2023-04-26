@@ -93,7 +93,7 @@ ER図はer.dioに記載
 ## Itemsテーブル
 - belongs_to :user
 - has_many :favorites
-- has_many :users, through: :favorites, source: :user
+- has_many :users, through: :favorites
 - has_one :purchase_history
 
 ## Favoritesテーブル
