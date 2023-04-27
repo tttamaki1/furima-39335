@@ -60,11 +60,11 @@ ER図はer.dioに記載
 | prefecture_id         | integer | null: false                    |
 | shipping_estimate_id  | integer | null: false                    |
 
-## favoritesテーブル
+<!-- ## favoritesテーブル
 | Column   | Type       | Options                        |
 | -------- | ---------- | ------------------------------ |
 | user     | references | null: false, foreign_key: true |
-| item     | references | null: false, foreign_key: true |
+| item     | references | null: false, foreign_key: true | -->
 
 ## purchase_historiesテーブル
 | Column      | Type       | Options                        |
@@ -87,19 +87,19 @@ ER図はer.dioに記載
 
 ## Usersテーブル
 - has_many :items
-- has_many :favorites
-- has_many :items, through: :favorites
+<!-- - has_many :favorites
+- has_many :items, through: :favorites -->
 - has_many :purchase_histories
 
 ## Itemsテーブル
 - belongs_to :user
-- has_many :favorites
-- has_many :users, through: :favorites
+<!-- - has_many :favorites
+- has_many :users, through: :favorites -->
 - has_one :purchase_history
 
-## Favoritesテーブル
+<!-- ## Favoritesテーブル
 - belongs_to :user
-- belongs_to :item
+- belongs_to :item -->
 
 ## PurchaseHistoriesテーブル
 - belongs_to :user
@@ -119,9 +119,7 @@ ER図はer.dioに記載
 ・名(漢字)
 ・姓(カナ)
 ・名(カナ)
-・誕生年
-・誕生月
-・誕生日
+・誕生年月日
 
 ## itemsテーブル
 ・カテゴリーID (Activehash)
