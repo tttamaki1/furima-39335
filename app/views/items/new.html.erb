@@ -3,15 +3,13 @@
     <%= link_to image_tag('furima-logo-color.png' , size: '185x50'), "/" %>
 
   </header>
-  <%= render 'shared/error_messages', model: @item %>
+  
   <div class="items-sell-main">
     <h2 class="items-sell-title">商品の情報を入力</h2>
     <%= form_with model:@item, url: items_path, local: true do |f| %>
 
-    <%# インスタンスを渡して、エラー発生時にメッセージが表示されるようにしましょう。%>
-    <%# render 'shared/error_messages', model: f.object %>
-    <%# //インスタンスを渡して、エラー発生時にメッセージが表示されるようにしましょう。%>
-
+    <%= render 'shared/error_messages', model: @item %>
+   
     <%# 商品画像 %>
     <div class="img-upload">
       <div class="weight-bold-text">
@@ -51,12 +49,12 @@
           カテゴリー
           <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select(:category_id, Category.all, :id, :name, {prompt: '---'}, {class:"select-box", id:"category"}) %>
+        <%= f.collection_select(:category_id, Category.all, :id, :name, {class:"select-box", id:"category"}) %>
         <div class="weight-bold-text">
           商品の状態
           <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select(:condition_id, Condition.all, :id, :name, { prompt: '---' }, { class: 'select-box', id: 'condition' }) %>
+        <%= f.collection_select(:condition_id, Condition.all, :id, :name, { class: 'select-box', id: 'condition' }) %>
       </div>
     </div>
     <%# /商品の詳細 %>
@@ -72,17 +70,17 @@
           配送料の負担
           <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select(:shipping_fee_bearer_id, ShippingFeeBearer.all, :id, :name, { prompt: '---' }, { class: 'select-box', id: 'shipping_fee_bearer' }) %>
+        <%= f.collection_select(:shipping_fee_bearer_id, ShippingFeeBearer.all, :id, :name, { class: 'select-box', id: 'shipping_fee_bearer' }) %>
         <div class="weight-bold-text">
           発送元の地域
           <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, { prompt: '---' }, { class: 'select-box', id: 'item-prefecture' }) %>
+        <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, { class: 'select-box', id: 'item-prefecture' }) %>
         <div class="weight-bold-text">
           発送までの日数
           <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select(:shipping_estimate_id, ShippingEstimate.all, :id, :name, { prompt: '---' }, { class: 'select-box', id: 'item-scheduled-delivery' }) %>
+        <%= f.collection_select(:shipping_estimate_id, ShippingEstimate.all, :id, :name, { class: 'select-box', id: 'item-scheduled-delivery' }) %>
       </div>
     </div>
     <%# /配送について %>
