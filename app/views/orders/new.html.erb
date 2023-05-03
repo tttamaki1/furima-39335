@@ -35,11 +35,6 @@
       <%= f.hidden_field :item_id, value: @item.id %>
       <%= f.hidden_field :price, value: @item.price %>
       <%= render 'shared/error_messages', model: f.object %> 
-      <% if @order_form.errors.include?(:token) %>
-        <p class="error-message">
-          クレジットカード情報が正しくありません。
-        </p>
-      <% end %>
       <%# カード情報の入力 %>
       <div class='credit-card-form'>
         <h1 class='info-input-haedline'>

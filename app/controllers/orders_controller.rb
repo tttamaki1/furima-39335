@@ -1,5 +1,7 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!, except: :index
+  before_action :redirect_if_sold, only: [:new, :create]
+  before_action :redirect_if_owner, only: [:new, :create]
   # before_action :set_item, only: [:new, :create]
 
   def new
