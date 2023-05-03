@@ -30,3 +30,13 @@
 yarn-debug.log*
 .yarn-integrity
 .Ds_Store
+spec/fixtures/starship.jpgZone.Identifier
+app/views/shared/_second-header.html.erbZone.Identifier
+app/views/devise/registrations/new.html.erbZone.Identifier
+app/views/items/edit.html.erbZone.Identifier
+app/views/items/index.html.erbZone.Identifier
+*.Identifier
+*.Identifier
+app/views/layouts/application.html.erbZone.Identifier
+app/views/shared/_footer.html.erbZone.Identifier
+spec/fixtures/starship.jpgZone.Identifier
