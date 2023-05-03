@@ -3,7 +3,7 @@ class ItemsController < ApplicationController
   before_action :redirect_if_sold, only: [:edit, :update]
   before_action :redirect_unless_owner, only: [:edit, :update]
   before_action :set_item, only: [:show, :edit, :update]
-  
+
   def index
     @items = Item.all.order(created_at: :DESC)
   end
@@ -44,19 +44,18 @@ class ItemsController < ApplicationController
 
   def set_item
     @item = Item.find(params[:id])
-  end  
-
-   def redirect_if_sold
-     @item = Item.find(params[:id])
-     if PurchaseHistory.exists?(item_id: @item.id)
-       redirect_to root_path
-     end
-   end
-
-  def redirect_unless_owner
-    unless current_user == @item.user
-      redirect_to root_path
-    end
   end
 
+  def redirect_if_sold
+    @item = Item.find(params[:id])
+    return unless PurchaseHistory.exists?(item_id: @item.id)
+
+    redirect_to root_path
+  end
+
+  def redirect_unless_owner
+    return if current_user == @item.user
+
+    redirect_to root_path
+  end
 end

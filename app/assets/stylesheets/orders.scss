@@ -1,3 +1,43 @@
 // Place all the styles related to the orders controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.form-wrap-order {
+    width: 50%;
+    background-color: white;
+  }
+
+.input-card {
+    width: 90%;
+    margin-top: 5px;
+    height: 48px;
+    padding: 10px 16px 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background: #fff;
+    font-size: 16px;
+    resize: none;
+  }
+  .input-exp {
+    width: 40%;
+    margin-top: 5px;
+    height: 48px;
+    padding: 10px 16px 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background: #fff;
+    font-size: 16px;
+    resize: none;
+  }
+
+  .input-cvc {
+    width: 30%;
+    margin-top: 5px;
+    height: 48px;
+    padding: 10px 16px 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background: #fff;
+    font-size: 16px;
+    resize: none;
+  }
+  
