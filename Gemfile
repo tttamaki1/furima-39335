@@ -40,6 +40,8 @@ gem 'image_processing', '~> 1.2'
 
 gem 'rubocop', require: false
 
+gem 'pry-rails'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -48,6 +50,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 4.0.0'
   gem 'factory_bot_rails'
   gem 'faker', '~> 2.0'
+  gem 'dotenv-rails'
 end
 
 group :development do
