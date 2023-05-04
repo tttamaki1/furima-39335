@@ -52,4 +52,17 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
 
+  def redirect_if_sold
+    @item = Item.find(params[:id])
+    return unless PurchaseHistory.exists?(item_id: @item.id)
+
+    redirect_to root_path
+  end
+
+  def redirect_unless_owner
+    return if current_user == @item.user
+
+    redirect_to root_path
+  end
+
 end
