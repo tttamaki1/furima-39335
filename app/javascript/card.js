@@ -4,9 +4,6 @@ const pay = () => {
     const numberElement = elements.create('cardNumber');
     const expiryElement = elements.create('cardExpiry');
     const cvcElement = elements.create('cardCvc');
-
-    const payjpPublicKey = process.env.REACT_APP_PAYJP_PUBLIC_KEY;
-    console.log("Payjp public key:", payjpPublicKey);
   
     numberElement.mount('#number-form');
     expiryElement.mount('#expiry-form');
