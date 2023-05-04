@@ -2,7 +2,6 @@ class OrdersController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
   before_action :redirect_if_sold, only: [:new, :create]
   before_action :redirect_if_owner, only: [:new, :create]
-  # before_action :set_item, only: [:new, :create]
 
   def new
     @item = Item.find(params[:id])
@@ -46,6 +45,7 @@ class OrdersController < ApplicationController
   end
 
   def redirect_if_owner
+    @item = Item.find(params[:id])
     return if current_user != @item.user
 
     redirect_to root_path
