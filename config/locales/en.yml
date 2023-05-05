@@ -31,6 +31,7 @@
 
 ja:
   activerecord:
+  activerecord:
     attributes:
       user:
         nickname: ニックネーム
@@ -39,7 +40,23 @@ ja:
         last_name_kana: 姓（カナ）
         first_name_kana: 名（カナ）
         birth_date: 誕生年月日
+      item:
+        item_name: 商品名
+        description: 商品の説明
+        price: 価格
+        image: 画像
+        category_id: カテゴリー
+        condition_id: 商品の状態
+        shipping_fee_bearer_id: 配送料の負担
+        prefecture_id: 配送元の地域
+        shipping_estimate_id: 発送までの日数
+      errors:
+        messages:
+          blank: "を入力してください"
+          invalid: "を正しく入力してください"
+
   models:
+
       order_form:
         postal_code: 郵便番号
         prefecture_id: 都道府県
