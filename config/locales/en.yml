@@ -29,5 +29,24 @@
 # To learn more, please read the Rails Internationalization guide
 # available at https://guides.rubyonrails.org/i18n.html.
 
+ja:
+  activerecord:
+    attributes:
+      user:
+        nickname: ニックネーム
+        last_name: 姓（苗字）
+        first_name: 名（名前）
+        last_name_kana: 姓（カナ）
+        first_name_kana: 名（カナ）
+        birth_date: 誕生年月日
+  models:
+      order_form:
+        postal_code: 郵便番号
+        prefecture_id: 都道府県
+        city: 市町村
+        street_address: 番地
+        phone_number: 電話番号
+        token: クレジットカード情報
+
 en:
   hello: "Hello world"
